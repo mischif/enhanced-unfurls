@@ -3,7 +3,7 @@ name = "pelican-enhanced-unfurls"
 version = "0.0.0"
 description = "Generate metadata for improved link unfurls in Facebook/Slack/Twitter/etc."
 authors = ["Jeremy Brown <mischif@users.noreply.github.com>"]
-license = "Apache-2.0"
+license = "NPOSL-3.0"
 readme = "README.md"
 keywords = ["pelican", "open graph", "oembed"]
 repository = "https://github.com/pelican-plugins/enhanced-unfurls"
@@ -24,7 +24,6 @@ classifiers = [
 ]
 
 [tool.poetry.urls]
-"Funding" = "https://donate.getpelican.com/"
 "Issue Tracker" = "https://github.com/pelican-plugins/enhanced-unfurls/issues"
 
 [tool.poetry.dependencies]

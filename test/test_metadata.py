@@ -2,12 +2,11 @@
 #                               enhanced-unfurls                               #
 #  Generate metadata for improved link unfurls in Facebook/Slack/Twitter/etc.  #
 #                             (C)2022 Jeremy Brown                             #
-#            Released under Prosperity Public License version 3.0.0            #
+#       Released under version 3.0 of the Non-Profit Open Source License       #
 ################################################################################
 
 from pathlib import Path
 from unittest.mock import Mock, patch
-from urllib.parse import urlparse
 
 import pytest
 
@@ -108,7 +107,6 @@ def test_get_metadata(siteurl, lede, locale, default_card, article_card):
 
     if siteurl:
         assert result["url"] == f"{siteurl}/{content.url}"
-        assert result["domain"] == urlparse(siteurl).netloc
 
         if lede in ("rel", "def-rel", "fil-pres"):
             assert result["lede"] == "http://example.com/test/data/static/test.png"
@@ -167,9 +165,7 @@ def test_enhance_metadata(mock_logger, siteurl, default_lede):
     else:
         assert art_gen.articles[0].metadata["card_type"] == "summary"
 
-    if siteurl:
-        assert art_gen.articles[0].metadata["domain"] == "example.com"
-    else:
+    if not siteurl:
         mock_logger.warning.assert_called_once_with(
             "SITEURL not defined; tags requiring full URL will not be generated"
         )

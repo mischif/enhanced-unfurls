@@ -2,7 +2,7 @@
 #                               enhanced-unfurls                               #
 #  Generate metadata for improved link unfurls in Facebook/Slack/Twitter/etc.  #
 #                             (C)2022 Jeremy Brown                             #
-#            Released under Prosperity Public License version 3.0.0            #
+#       Released under version 3.0 of the Non-Profit Open Source License       #
 ################################################################################
 
 from datetime import datetime
@@ -64,7 +64,6 @@ def test_insert_tags(siteurl, output_fmt):
         "lede_desc": "An example image",
         "author_twitter": "@johndoe",
         "site_twitter": "@examplecom",
-        "domain": "example.com",
         "tl1": "key-1",
         "td1": "val-1",
         "tl2": "key-2",
@@ -90,7 +89,7 @@ def test_insert_tags(siteurl, output_fmt):
     assert mock_content.unfurl_fb["fb:app_id"] == content_md["fb_app_id"]
 
     assert hasattr(mock_content, "unfurl_twitter")
-    assert len(mock_content.unfurl_twitter) == 13
+    assert len(mock_content.unfurl_twitter) == 12
     assert mock_content.unfurl_twitter["twitter:title"] == "Test Article"
     assert mock_content.unfurl_twitter["twitter:card"] == content_md["card_type"]
     assert mock_content.unfurl_twitter["twitter:url"] == content_md["url"]
@@ -100,7 +99,6 @@ def test_insert_tags(siteurl, output_fmt):
         mock_content.unfurl_twitter["twitter:creator"] == content_md["author_twitter"]
     )
     assert mock_content.unfurl_twitter["twitter:site"] == content_md["site_twitter"]
-    assert mock_content.unfurl_twitter["twitter:domain"] == content_md["domain"]
     assert mock_content.unfurl_twitter["twitter:label1"] == content_md["tl1"]
     assert mock_content.unfurl_twitter["twitter:data1"] == content_md["td1"]
     assert mock_content.unfurl_twitter["twitter:label2"] == content_md["tl2"]

@@ -2,7 +2,7 @@
 #                               enhanced-unfurls                               #
 #  Generate metadata for improved link unfurls in Facebook/Slack/Twitter/etc.  #
 #                             (C)2022 Jeremy Brown                             #
-#            Released under Prosperity Public License version 3.0.0            #
+#       Released under version 3.0 of the Non-Profit Open Source License       #
 ################################################################################
 
 from pelican import signals

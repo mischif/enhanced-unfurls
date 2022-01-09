@@ -2,11 +2,10 @@
 #                               enhanced-unfurls                               #
 #  Generate metadata for improved link unfurls in Facebook/Slack/Twitter/etc.  #
 #                             (C)2022 Jeremy Brown                             #
-#            Released under Prosperity Public License version 3.0.0            #
+#       Released under version 3.0 of the Non-Profit Open Source License       #
 ################################################################################
 
 from logging import getLogger
-from urllib.parse import urlparse
 
 from pelican.generators import ArticlesGenerator
 
@@ -97,7 +96,6 @@ def get_metadata(logger, content, settings, siteurl, locale):
 
     if siteurl:
         metadata["url"] = f"{siteurl}/{content.url}"
-        metadata["domain"] = urlparse(siteurl).netloc
 
     return metadata
 

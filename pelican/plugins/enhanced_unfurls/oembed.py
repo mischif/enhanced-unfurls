@@ -2,7 +2,7 @@
 #                               enhanced-unfurls                               #
 #  Generate metadata for improved link unfurls in Facebook/Slack/Twitter/etc.  #
 #                             (C)2022 Jeremy Brown                             #
-#            Released under Prosperity Public License version 3.0.0            #
+#       Released under version 3.0 of the Non-Profit Open Source License       #
 ################################################################################
 
 from json import dumps
@@ -25,9 +25,7 @@ class OEmbedGenerator:
         if self.settings.get("oembed", False):
             for content in self.context["articles"]:
                 oembed_path = self.out_root.joinpath(content.oembed_save_as)
-                provider_name = self.context.get(
-                    "SITENAME", content.metadata.get("domain")
-                )
+                provider_name = self.context.get("SITENAME")
                 info = {
                     "type": "link",
                     "version": "1.0",

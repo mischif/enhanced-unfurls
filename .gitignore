@@ -1,1 +1,16 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+.eggs/
+*.egg-info/
+*.py[cod]
+*$py.class
+
+# Backup files
+*.*~
+
+# Test-related files
+.pytest_cache/
+.coverage
+
+# Release-related files
 poetry.lock

@@ -2,7 +2,7 @@
 #                               enhanced-unfurls                               #
 #  Generate metadata for improved link unfurls in Facebook/Slack/Twitter/etc.  #
 #                             (C)2022 Jeremy Brown                             #
-#            Released under Prosperity Public License version 3.0.0            #
+#       Released under version 3.0 of the Non-Profit Open Source License       #
 ################################################################################
 
 from datetime import datetime
@@ -74,7 +74,6 @@ def insert_tags(generator, content):
         "lede_desc": "twitter:image:alt",
         "author_twitter": "twitter:creator",
         "site_twitter": "twitter:site",
-        "domain": "twitter:domain",
         "tl1": "twitter:label1",
         "td1": "twitter:data1",
         "tl2": "twitter:label2",
